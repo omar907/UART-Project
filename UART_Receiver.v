@@ -1,8 +1,17 @@
  module UART_Receiver
  (
-    input wire data_bit,
-    output wire [7:0] data
+    input wire din,
+    input wire dnum,snum,
+    input wire bd_rate,par,
+    
+    input clk,rst,
+    
+    output wire [7:0] data,
+    output error
  );
+ 
+ 
+ 
  
  
  endmodule
