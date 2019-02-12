@@ -1,0 +1,15 @@
+# do {Baudrate_Generator_compile.do} 
+# Copying E:\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied E:\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module Baudrate_Generator
+# 
+# Top level modules:
+# 	Baudrate_Generator
+# Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	glbl

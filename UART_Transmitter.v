@@ -49,14 +49,13 @@ end
 //Control path of the FSMD ... next statte logic(combinational part of the FSM)
 always @(*)
 begin
-    // default values
-    next_state = next_state;
-    
     // next state logic 
     case(state)
     idle:     if(start) next_state = sending;
+              else next_state = idle;
         
     sending:  if(q == 4'b0) next_state = stop;
+              else next_state = sending;
     
     stop:     if(snum) next_state = transition;
               else    next_state = idle;
@@ -71,7 +70,6 @@ end
 always @(*)
 begin
     // default values
-    dout_next = dout_next;
     q_next = q_next;
     data_reg_next = data_reg_next;
     // next data logic 
@@ -107,6 +105,13 @@ begin
             
             data_reg_next = {parity_bit,data};
         end
+        else
+        begin
+            dout_next = 1'b1;
+            parity_bit = 1'b0;
+            q_next = 4'b0;
+            data_reg_next = 9'b0;
+        end
     end
     sending:
     begin
@@ -114,6 +119,13 @@ begin
         else   dout_next = data_reg[0];
         q_next = q - 4'b1;
         data_reg_next = data_reg >> 1;
+    end
+    default:
+    begin
+        dout_next = 1'b1;
+        parity_bit = 1'b0;
+        q_next = 4'b0;
+        data_reg_next = 9'b0;
     end
     
     endcase

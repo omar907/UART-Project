@@ -1,0 +1,9 @@
+# do {Baudrate_Generator_simulate.do} 
+# vsim -L unisims_ver -L unimacro_ver -L secureip -L xil_defaultlib -lib xil_defaultlib -voptargs=\"+acc\" -t 1ps xil_defaultlib.Baudrate_Generator xil_defaultlib.glbl 
+# Loading xil_defaultlib.Baudrate_Generator
+# Loading xil_defaultlib.glbl
+# ** Error: (vish-4014) No objects found matching '*'.
+# Error in macro ./Baudrate_Generator_wave.do line 9
+# (vish-4014) No objects found matching '*'.
+#     while executing
+# "add wave *"
