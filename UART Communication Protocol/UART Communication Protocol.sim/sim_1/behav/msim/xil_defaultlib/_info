@@ -3,42 +3,42 @@ K3
 13
 cModel Technology
 Z0 dD:\Digital Design implementation codes\UART Project\UART Communication Protocol\UART Communication Protocol.sim\sim_1\behav
-vBaudrate_Generator
-ILUD0BcE_RW?8]GhNYi;AD2
-V;I]XD8]@>`QneXAa0RJ?k3
-Z1 dD:\Digital Design implementation codes\UART Project\UART Communication Protocol\UART Communication Protocol.sim\sim_1\behav
-w1549916911
-8./../../../../Baudrate_Generator.v
-F./../../../../Baudrate_Generator.v
-L0 1
-Z2 OV;L;10.1b;51
-r1
-31
-Z3 o-work xil_defaultlib -O0
-n@baudrate_@generator
-!i10b 1
-!s100 zL@n66SQf4[:R`@FCzHBo2
-!s85 0
-!s108 1549930722.775000
-!s107 ./../../../../Baudrate_Generator.v|
-!s90 -incr|-work|xil_defaultlib|./../../../../Baudrate_Generator.v|
-!s101 -O0
 vglbl
 !i10b 1
 !s100 c1=:[Hh_:X5jcHNWRn41V0
 I@d]dzkl]fhz48X8kFgi_z2
 VM[9mS]S:KA1i4VeCMX35[3
-R1
+Z1 dD:\Digital Design implementation codes\UART Project\UART Communication Protocol\UART Communication Protocol.sim\sim_1\behav
 w1429673372
 8glbl.v
 Fglbl.v
 L0 6
-R2
+Z2 OV;L;10.1b;51
 r1
 !s85 0
 31
-!s108 1549930723.273000
+!s108 1549937395.858000
 !s107 glbl.v|
 !s90 -work|xil_defaultlib|glbl.v|
 !s101 -O0
+Z3 o-work xil_defaultlib -O0
+vUART_Transmitter
+I?0`K_[8PAMD[oF[L2oH@f0
+Va]@NGWUS_7=H=KCiCAAD?1
+R1
+w1549937286
+8./../../../../UART_Transmitter.v
+F./../../../../UART_Transmitter.v
+L0 1
+R2
+r1
+31
 R3
+n@u@a@r@t_@transmitter
+!i10b 1
+!s100 A@XKEaAEgf=]7I:DAEVz03
+!s85 0
+!s108 1549937395.627000
+!s107 ./../../../../UART_Transmitter.v|
+!s90 -incr|-work|xil_defaultlib|./../../../../UART_Transmitter.v|
+!s101 -O0

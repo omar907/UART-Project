@@ -1,18 +1,18 @@
 module UART_Transmitter
-#(      // FSMD parameters
-    parameter [1:0]
+#(      // FSMD parameters (states names)
+    parameter [1:0]  
         idle = 2'b00,
         sending = 2'b01,
         stop = 2'b10,
         transition = 2'b11
 )
 (
-    output wire dout,
-    input wire [7:0] data,
-    input wire start,
-    input wire dnum,snum,
-    input wire [1:0] bd_rate,par,
-    input wire clk,rst,en
+    output wire dout,       // One bit output (data shifted serialy)
+    input wire [7:0] data,  // The temperature data to be send to the Receiver
+    input wire start,       // Start sending the data (flag)
+    input wire dnum,snum,   // number of data/stop bits
+    input wire [1:0] bd_rate,par,   // bode_rate/type of parity
+    input wire clk,rst      // Clock/reset
 );
 
 
@@ -34,7 +34,7 @@ begin
     begin
         state <= idle;
         data_reg <= 8'b0;
-        dout_reg <= 1'b0;
+        dout_reg <= 1'b1;
         q <= 4'b0;
     end
     else
@@ -60,8 +60,7 @@ begin
     stop:     if(snum) next_state = transition;
               else    next_state = idle;
                 
-  transition: if(start) next_state = sending;
-              else next_state = idle;    
+  transition: next_state = idle;    
     endcase
 end
 
@@ -69,67 +68,71 @@ end
 //Data path of the FSMD ... next data logic
 always @(*)
 begin
-    // default values
-    q_next = q_next;
-    data_reg_next = data_reg_next;
     // next data logic 
     case(state)
     idle:
     begin
-        if(start) 
-        begin
-            dout_next = 1'b0;
-            
-            case(par)
-            2'b00,2'b11 :
-            begin
-                if(dnum) q_next = 4'd8;   // no parity + 8-bit data
-                else     q_next = 4'd7;   // no parity + 7-bit data
-                parity_bit = 1'b0;
-            end
-                          
-            2'b01 :
-            begin 
-                if(dnum)    q_next = 4'd9;  //odd parity +  8-bit data
-                else        q_next = 4'd8;  //odd parity +  7-bit data
-                parity_bit = (^data);
-            end
-                    
-            2'b10 :
-            begin
-                if(dnum)    q_next = 4'd9;  //even parity +  8-bit data
-                else        q_next = 4'd8;  //even parity +  7-bit data
-                parity_bit = (~^data);        
-            end
-            endcase
-            
-            data_reg_next = {parity_bit,data};
+        if(start)                                                                                        
+        begin                                                                                            
+            dout_next = 1'b0;                                                                            
+                                                                                                         
+            case(par)                                                                                    
+            2'b00,2'b11 :                                                                                
+            begin                                                                                        
+                if(dnum) q_next = 4'd8;   // no parity + 8-bit data                                      
+                else     q_next = 4'd7;   // no parity + 7-bit data                                      
+                parity_bit = 1'b0;                                                                       
+            end                                                                                          
+                                                                                                         
+            2'b01 :                                                                                      
+            begin                                                                                        
+                case(dnum)                                                                               
+                1'b1:  begin parity_bit = (^data);      q_next = 4'd9; end  //odd parity +  8-bit data   
+                1'b0:  begin parity_bit = (^data[6:0]); q_next = 4'd8; end  //odd parity +  7-bit data   
+                endcase                                                                                  
+            end                                                                                          
+                                                                                                         
+            2'b10 :                                                                                      
+            begin                                                                                        
+                case(dnum)                                                                               
+                1'b1:  begin parity_bit = (~^data);      q_next = 4'd9; end  //even parity +  8-bit data 
+                1'b0:  begin parity_bit = (~^data[6:0]); q_next = 4'd8; end  //even parity +  7-bit data 
+                endcase                                                                                  
+            end                                                                                          
+            endcase                                                                                      
+                                                                                                         
+            case(dnum)                                                                                   
+            1'b1:  data_reg_next = {parity_bit,data};    //parity + data                                               
+            1'b0:  data_reg_next = {1'b0,parity_bit,data[6:0]};  // 0 in the 9th bit + parity + data                                
+            endcase                                                                                          
         end
         else
         begin
+        // like the reset conditions
             dout_next = 1'b1;
-            parity_bit = 1'b0;
+            parity_bit = 1'b0;          
             q_next = 4'b0;
             data_reg_next = 9'b0;
         end
     end
+    
     sending:
     begin
         if(q == 4'b0) dout_next = 1'b1;
         else   dout_next = data_reg[0];
-        q_next = q - 4'b1;
-        data_reg_next = data_reg >> 1;
+        q_next = q - 4'b1;      // decrementing the counter
+        data_reg_next = data_reg >> 1;  //shift the data one by one with ever clock
     end
+    
     default:
     begin
+        // reseting conditions
         dout_next = 1'b1;
         parity_bit = 1'b0;
         q_next = 4'b0;
         data_reg_next = 9'b0;
     end
-    
     endcase
-
 end
 
 

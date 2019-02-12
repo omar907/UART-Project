@@ -1,6 +1,6 @@
 @echo off
 set bin_path=E:\modelsim_ase\win32aloem
-call %bin_path%/vsim  -c -do "do {Baudrate_Generator_compile.do}" -l compile.log
+call %bin_path%/vsim  -c -do "do {UART_Transmitter_compile.do}" -l compile.log
 if "%errorlevel%"=="1" goto END
 if "%errorlevel%"=="0" goto SUCCESS
 :END

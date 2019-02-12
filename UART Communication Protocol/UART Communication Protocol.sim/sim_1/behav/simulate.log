@@ -1,9 +1,129 @@
-# do {Baudrate_Generator_simulate.do} 
-# vsim -L unisims_ver -L unimacro_ver -L secureip -L xil_defaultlib -lib xil_defaultlib -voptargs=\"+acc\" -t 1ps xil_defaultlib.Baudrate_Generator xil_defaultlib.glbl 
-# Loading xil_defaultlib.Baudrate_Generator
+# do {UART_Transmitter_simulate.do} 
+# vsim -L unisims_ver -L unimacro_ver -L secureip -L xil_defaultlib -lib xil_defaultlib -voptargs=\"+acc\" -t 1ps xil_defaultlib.UART_Transmitter xil_defaultlib.glbl 
+# Loading xil_defaultlib.UART_Transmitter
 # Loading xil_defaultlib.glbl
-# ** Error: (vish-4014) No objects found matching '*'.
-# Error in macro ./Baudrate_Generator_wave.do line 9
-# (vish-4014) No objects found matching '*'.
-#     while executing
-# "add wave *"
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+noforce sim:/UART_Transmitter/clk
+force -freeze sim:/UART_Transmitter/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/UART_Transmitter/rst 1 0
+force -freeze sim:/UART_Transmitter/en 0 0
+force -freeze sim:/UART_Transmitter/data 10101010 0
+force -freeze sim:/UART_Transmitter/start 0 0
+force -freeze sim:/UART_Transmitter/dnum 0 0
+force -freeze sim:/UART_Transmitter/snum 1 0
+force -freeze sim:/UART_Transmitter/bd_rate 0 0
+force -freeze sim:/UART_Transmitter/par 10 0
+run
+run
+run
+run
+run
+run
+force -freeze sim:/UART_Transmitter/rst St0 0
+run
+run
+run
+run
+run
+run
+force -freeze sim:/UART_Transmitter/start St1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/UART_Transmitter/start St0 0
+run
+run
+run
+run
+run
+force -freeze sim:/UART_Transmitter/dnum St1 0
+force -freeze sim:/UART_Transmitter/snum St0 0
+force -freeze sim:/UART_Transmitter/par 00 0
+run
+run
+run
+run
+force -freeze sim:/UART_Transmitter/start St1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/UART_Transmitter/snum St1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
