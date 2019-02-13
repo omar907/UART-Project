@@ -7,12 +7,13 @@ module UART_Transmitter
         transition = 2'b11
 )
 (
-    output wire dout,       // One bit output (data shifted serialy)
     input wire [7:0] data,  // The temperature data to be send to the Receiver
     input wire start,       // Start sending the data (flag)
     input wire dnum,snum,   // number of data/stop bits
     input wire [1:0] bd_rate,par,   // bode_rate/type of parity
-    input wire clk,rst      // Clock/reset
+    input wire clk,rst,     // Clock/reset
+    
+    output wire dout        // One bit output (data shifted serialy)
 );
 
 
@@ -79,8 +80,10 @@ begin
             case(par)                                                                                    
             2'b00,2'b11 :                                                                                
             begin                                                                                        
-                if(dnum) q_next = 4'd8;   // no parity + 8-bit data                                      
-                else     q_next = 4'd7;   // no parity + 7-bit data                                      
+                case(dnum)
+                1'b1: q_next = 4'd8;   // no parity + 8-bit data                                      
+                1'b0: q_next = 4'd7;   // no parity + 7-bit data
+                endcase                                      
                 parity_bit = 1'b0;                                                                       
             end                                                                                          
                                                                                                          
