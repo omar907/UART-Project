@@ -17,28 +17,28 @@ Z2 OV;L;10.1b;51
 r1
 !s85 0
 31
-!s108 1549937395.858000
+!s108 1550102656.244000
 !s107 glbl.v|
 !s90 -work|xil_defaultlib|glbl.v|
 !s101 -O0
 Z3 o-work xil_defaultlib -O0
-vUART_Transmitter
-I?0`K_[8PAMD[oF[L2oH@f0
-Va]@NGWUS_7=H=KCiCAAD?1
+vUART_Receiver
+I>YQjNHki:Wab37>ZBdnSa1
+VTYXNfJ<g;hBl0e4REl6lX3
 R1
-w1549937286
-8./../../../../UART_Transmitter.v
-F./../../../../UART_Transmitter.v
+w1550102633
+8./../../../../UART_Receiver.v
+F./../../../../UART_Receiver.v
 L0 1
 R2
 r1
 31
 R3
-n@u@a@r@t_@transmitter
+n@u@a@r@t_@receiver
 !i10b 1
-!s100 A@XKEaAEgf=]7I:DAEVz03
+!s100 ]7A?N0Q:OU6gS4d^BKHlT0
 !s85 0
-!s108 1549937395.627000
-!s107 ./../../../../UART_Transmitter.v|
-!s90 -incr|-work|xil_defaultlib|./../../../../UART_Transmitter.v|
+!s108 1550102655.982000
+!s107 ./../../../../UART_Receiver.v|
+!s90 -incr|-work|xil_defaultlib|./../../../../UART_Receiver.v|
 !s101 -O0

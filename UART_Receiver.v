@@ -9,7 +9,7 @@
  (
     input wire din,
     input wire dnum,snum,
-    input wire bd_rate,par,
+    input wire [1:0] bd_rate,par,
     
     input clk,rst,
     
@@ -20,15 +20,15 @@
  // signal declration
 wire sample_tick;
 reg  sample_16;
-reg [1:0] state;
-reg [1:0] next_state;
-reg  qclk_reg;       // Sequential part for a clock counter
-wire qclk_next;      // Compinational part for this counter
-reg [3:0] r;    // Sequential counter
-reg [3:0] r_next;
-reg [8:0] data_reg; // A regester to store the received data in 
-reg data_flag;  // A flag to detect that the data is received correctly
-reg error_reg;
+reg  [1:0] state;
+reg  [1:0] next_state;
+reg  [3:0] qclk_reg;       // Sequential part for a clock counter
+wire [3:0] qclk_next;      // Compinational part for this counter
+reg  [3:0] r;    // Sequential counter
+reg  [3:0] r_next;
+reg  [8:0] data_reg; // A regester to store the received data in 
+reg  data_flag;  // A flag to detect that the data is received correctly
+reg  error_reg;
  
  // Counter of the sampling tick ( every 16 clk > 1 sample tick )
 always @(posedge clk, posedge rst)
@@ -80,7 +80,7 @@ begin
     idle: if(din)  next_state = idle;
           else     next_state = receiving;
           
-    receiving : if(r == 4'b0) 
+    receiving : if(r == 4'b1) 
                 case(snum)
                 1'b0 : next_state = stop;
                 1'b1 : next_state = wait_stop;

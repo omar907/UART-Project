@@ -1,13 +1,13 @@
-# do {UART_Transmitter_compile.do} 
+# do {UART_Receiver_compile.do} 
 # Copying E:\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # ** Warning: Copied E:\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
-# -- Compiling module UART_Transmitter
+# -- Compiling module UART_Receiver
 # 
 # Top level modules:
-# 	UART_Transmitter
+# 	UART_Receiver
 # Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 # -- Compiling module glbl
 # 

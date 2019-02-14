@@ -1,6 +1,6 @@
 @echo off
 set bin_path=E:\modelsim_ase\win32aloem
-call %bin_path%/vsim  -c -do "do {UART_Transmitter_elaborate.do}" -l elaborate.log
+call %bin_path%/vsim  -c -do "do {UART_Receiver_elaborate.do}" -l elaborate.log
 if "%errorlevel%"=="1" goto END
 if "%errorlevel%"=="0" goto SUCCESS
 :END
