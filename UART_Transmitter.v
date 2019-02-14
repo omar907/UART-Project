@@ -58,10 +58,12 @@ begin
     sending:  if(q == 4'b0) next_state = stop;
               else next_state = sending;
     
-    stop:     if(snum) next_state = transition;
-              else    next_state = idle;
+    stop:     if(snum)          next_state = transition;
+              else if(~start)   next_state = idle;
+              else              next_state = stop; 
                 
-  transition: next_state = idle;    
+  transition: if(~start) next_state = idle;
+              else       next_state = transition; 
     endcase
 end
 
