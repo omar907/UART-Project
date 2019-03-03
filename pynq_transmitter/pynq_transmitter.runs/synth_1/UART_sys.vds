@@ -1,0 +1,411 @@
+#-----------------------------------------------------------
+# Vivado v2015.1 (64-bit)
+# SW Build 1215546 on Mon Apr 27 19:22:08 MDT 2015
+# IP Build 1209967 on Tue Apr 21 11:39:20 MDT 2015
+# Start of session at: Tue Feb 26 20:46:20 2019
+# Process ID: 3720
+# Log file: D:/Digital Design implementation codes/UART Project/pynq_transmitter/pynq_transmitter.runs/synth_1/UART_sys.vds
+# Journal file: D:/Digital Design implementation codes/UART Project/pynq_transmitter/pynq_transmitter.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source UART_sys.tcl -notrace
+Command: synth_design -top UART_sys -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 264.645 ; gain = 67.320
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'UART_sys' [D:/Digital Design implementation codes/Pynq_project/UART_sys.v:1]
+INFO: [Synth 8-638] synthesizing module 'baud_rate_gen' [D:/Digital Design implementation codes/Pynq_project/baud_rate_gen.v:9]
+INFO: [Synth 8-638] synthesizing module 'mod_m_counter' [D:/Digital Design implementation codes/Pynq_project/mod_counter.v:1]
+	Parameter n bound to: 11 - type: integer 
+	Parameter m bound to: 1302 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mod_m_counter' (1#1) [D:/Digital Design implementation codes/Pynq_project/mod_counter.v:1]
+INFO: [Synth 8-638] synthesizing module 'mod_m_counter__parameterized0' [D:/Digital Design implementation codes/Pynq_project/mod_counter.v:1]
+	Parameter n bound to: 10 - type: integer 
+	Parameter m bound to: 651 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mod_m_counter__parameterized0' (1#1) [D:/Digital Design implementation codes/Pynq_project/mod_counter.v:1]
+INFO: [Synth 8-638] synthesizing module 'mod_m_counter__parameterized1' [D:/Digital Design implementation codes/Pynq_project/mod_counter.v:1]
+	Parameter n bound to: 26 - type: integer 
+	Parameter m bound to: 50000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mod_m_counter__parameterized1' (1#1) [D:/Digital Design implementation codes/Pynq_project/mod_counter.v:1]
+INFO: [Synth 8-638] synthesizing module 'mod_m_counter__parameterized2' [D:/Digital Design implementation codes/Pynq_project/mod_counter.v:1]
+	Parameter n bound to: 8 - type: integer 
+	Parameter m bound to: 163 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mod_m_counter__parameterized2' (1#1) [D:/Digital Design implementation codes/Pynq_project/mod_counter.v:1]
+INFO: [Synth 8-256] done synthesizing module 'baud_rate_gen' (2#1) [D:/Digital Design implementation codes/Pynq_project/baud_rate_gen.v:9]
+INFO: [Synth 8-638] synthesizing module 'UART_Transmitter' [D:/Digital Design implementation codes/Pynq_project/UART_Transmitter.v:1]
+	Parameter idle bound to: 2'b00 
+	Parameter sending bound to: 2'b01 
+	Parameter stop bound to: 2'b10 
+	Parameter transition bound to: 2'b11 
+INFO: [Synth 8-256] done synthesizing module 'UART_Transmitter' (3#1) [D:/Digital Design implementation codes/Pynq_project/UART_Transmitter.v:1]
+WARNING: [Synth 8-3848] Net parallel_rx in module/entity UART_sys does not have driver. [D:/Digital Design implementation codes/Pynq_project/UART_sys.v:12]
+INFO: [Synth 8-256] done synthesizing module 'UART_sys' (4#1) [D:/Digital Design implementation codes/Pynq_project/UART_sys.v:1]
+WARNING: [Synth 8-3331] design UART_sys has unconnected port parallel_rx
+WARNING: [Synth 8-3331] design UART_sys has unconnected port baud_sel[1]
+WARNING: [Synth 8-3331] design UART_sys has unconnected port baud_sel[0]
+WARNING: [Synth 8-3331] design UART_sys has unconnected port serial_rx
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 298.949 ; gain = 101.625
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 298.949 ; gain = 101.625
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Digital Design implementation codes/UART Project/pynq_transmitter/pynq_transmitter.srcs/constrs_1/new/UART_sys.xdc]
+WARNING: [Vivado 12-584] No ports matched 'tx_full'. [D:/Digital Design implementation codes/UART Project/pynq_transmitter/pynq_transmitter.srcs/constrs_1/new/UART_sys.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Digital Design implementation codes/UART Project/pynq_transmitter/pynq_transmitter.srcs/constrs_1/new/UART_sys.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rx_empty'. [D:/Digital Design implementation codes/UART Project/pynq_transmitter/pynq_transmitter.srcs/constrs_1/new/UART_sys.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Digital Design implementation codes/UART Project/pynq_transmitter/pynq_transmitter.srcs/constrs_1/new/UART_sys.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'tx_full'. [D:/Digital Design implementation codes/UART Project/pynq_transmitter/pynq_transmitter.srcs/constrs_1/new/UART_sys.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Digital Design implementation codes/UART Project/pynq_transmitter/pynq_transmitter.srcs/constrs_1/new/UART_sys.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [D:/Digital Design implementation codes/UART Project/pynq_transmitter/pynq_transmitter.srcs/constrs_1/new/UART_sys.xdc]
+Parsing XDC File [D:/Digital Design implementation codes/Pynq_project/PYNQ-Z1_C.xdc]
+Finished Parsing XDC File [D:/Digital Design implementation codes/Pynq_project/PYNQ-Z1_C.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 637.672 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "max_tick" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "max_tick" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "max_tick" won't be mapped to RAM because address size (26) is larger than maximum supported(18)
+INFO: [Synth 8-5546] ROM "max_tick" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	                8 Bit    Wide XORs := 2     
+	                7 Bit    Wide XORs := 2     
++---Registers : 
+	               26 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module mod_m_counter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+Module mod_m_counter__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+Module mod_m_counter__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
++---Registers : 
+	               26 Bit    Registers := 1     
+Module mod_m_counter__parameterized2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+Module baud_rate_gen 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      1 Bit        Muxes := 5     
+Module UART_Transmitter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	                8 Bit    Wide XORs := 2     
+	                7 Bit    Wide XORs := 2     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:50 ; elapsed = 00:00:54 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "baud_ticker/baud2400/max_tick" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "baud_ticker/baud4800/max_tick" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "baud_ticker/baud9600/max_tick" won't be mapped to RAM because address size (26) is larger than maximum supported(18)
+INFO: [Synth 8-5546] ROM "baud_ticker/bau19200/max_tick" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design UART_sys has unconnected port parallel_rx
+WARNING: [Synth 8-3331] design UART_sys has unconnected port baud_sel[1]
+WARNING: [Synth 8-3331] design UART_sys has unconnected port baud_sel[0]
+WARNING: [Synth 8-3331] design UART_sys has unconnected port serial_rx
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 637.672 ; gain = 440.348
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tx/data_reg_reg[8] )
+WARNING: [Synth 8-3332] Sequential element (\tx/data_reg_reg[8] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud2400/count_reg_reg[10] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud2400/count_reg_reg[9] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud2400/count_reg_reg[8] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud2400/count_reg_reg[7] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud2400/count_reg_reg[6] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud2400/count_reg_reg[5] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud2400/count_reg_reg[4] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud2400/count_reg_reg[3] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud2400/count_reg_reg[2] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud2400/count_reg_reg[1] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud2400/count_reg_reg[0] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud4800/count_reg_reg[9] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud4800/count_reg_reg[8] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud4800/count_reg_reg[7] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud4800/count_reg_reg[6] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud4800/count_reg_reg[5] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud4800/count_reg_reg[4] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud4800/count_reg_reg[3] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud4800/count_reg_reg[2] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud4800/count_reg_reg[1] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/baud4800/count_reg_reg[0] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/bau19200/count_reg_reg[7] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/bau19200/count_reg_reg[6] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/bau19200/count_reg_reg[5] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/bau19200/count_reg_reg[4] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/bau19200/count_reg_reg[3] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/bau19200/count_reg_reg[2] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/bau19200/count_reg_reg[1] ) is unused and will be removed from module UART_sys.
+WARNING: [Synth 8-3332] Sequential element (\baud_ticker/bau19200/count_reg_reg[0] ) is unused and will be removed from module UART_sys.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:57 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:53 ; elapsed = 00:00:57 . Memory (MB): peak = 637.672 ; gain = 440.348
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:53 ; elapsed = 00:00:57 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:40 ; elapsed = 00:01:46 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:40 ; elapsed = 00:01:46 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:40 ; elapsed = 00:01:46 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:41 ; elapsed = 00:01:47 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:41 ; elapsed = 00:01:47 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:41 ; elapsed = 00:01:47 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports : Time (s): cpu = 00:01:41 ; elapsed = 00:01:47 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:41 ; elapsed = 00:01:47 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     7|
+|3     |LUT1   |    26|
+|4     |LUT2   |     2|
+|5     |LUT3   |     2|
+|6     |LUT4   |     3|
+|7     |LUT5   |    10|
+|8     |LUT6   |    31|
+|9     |FDCE   |    40|
+|10    |FDPE   |     1|
+|11    |IBUF   |     5|
+|12    |OBUF   |     1|
+|13    |OBUFT  |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------+------------------------------+------+
+|      |Instance      |Module                        |Cells |
++------+--------------+------------------------------+------+
+|1     |top           |                              |   130|
+|2     |  baud_ticker |baud_rate_gen                 |    90|
+|3     |    baud9600  |mod_m_counter__parameterized1 |    90|
+|4     |  tx          |UART_Transmitter              |    32|
++------+--------------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:41 ; elapsed = 00:01:47 . Memory (MB): peak = 637.672 ; gain = 440.348
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 34 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:03 ; elapsed = 00:01:18 . Memory (MB): peak = 637.672 ; gain = 60.477
+Synthesis Optimization Complete : Time (s): cpu = 00:01:42 ; elapsed = 00:01:48 . Memory (MB): peak = 637.672 ; gain = 440.348
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+35 Infos, 42 Warnings, 3 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 637.672 ; gain = 427.137
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.127 . Memory (MB): peak = 637.672 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 26 20:48:14 2019...

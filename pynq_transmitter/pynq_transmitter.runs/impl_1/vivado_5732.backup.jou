@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2015.1 (64-bit)
+# SW Build 1215546 on Mon Apr 27 19:22:08 MDT 2015
+# IP Build 1209967 on Tue Apr 21 11:39:20 MDT 2015
+# Start of session at: Tue Feb 26 19:19:35 2019
+# Process ID: 4936
+# Log file: D:/Digital Design implementation codes/UART Project/pynq_transmitter/pynq_transmitter.runs/impl_1/UART_sys.vdi
+# Journal file: D:/Digital Design implementation codes/UART Project/pynq_transmitter/pynq_transmitter.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source UART_sys.tcl -notrace

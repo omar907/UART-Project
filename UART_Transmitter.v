@@ -6,15 +6,15 @@ module UART_Transmitter
         stop = 2'b10,
         transition = 2'b11
 )
-(
-    input wire [7:0] data,  // The temperature data to be send to the Receiver
-    input wire start,       // Start sending the data (flag)
-    input wire dnum,snum,   // number of data/stop bits
-    input wire [1:0] bd_rate,par,   // bode_rate/type of parity
-    input wire clk,rst,     // Clock/reset
+( data,start,dnum,snum,par,clk,rst,dout
+    );
+input wire [7:0] data;  // The temperature data to be send to the Receiver
+input wire start;       // Start sending the data (flag)
+input wire dnum,snum;   // number of data/stop bits
+input wire [1:0] par;   // bode_rate/type of parity
+input wire clk,rst;     // Clock/reset
     
-    output wire dout        // One bit output (data shifted serialy)
-);
+output wire dout ;       // One bit output (data shifted serialy)
 
 
 // declaring signals
